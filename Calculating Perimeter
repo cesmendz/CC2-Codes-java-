@@ -21,3 +21,21 @@ class Perimeter {
         System.out.println(result);
     }
 }
+
+
+
+(Pre defined)
+class Perimeter {
+    public static void main(String[] args) {
+        int length = 10;
+        int width = 8;
+        int area = 10*8;
+        
+        int perimeter = 2* area;
+        
+        System.out.println("The length of the garden is " + length + " meters.");
+        System.out.println("The width of the garden is " + width + " meters");
+        System.out.println("The area of the Garden " + area + " meters");
+        System.out.println("The perimeter of the Garden " + perimeter + " meters");
+    }
+}
