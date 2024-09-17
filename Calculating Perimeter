@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Perimeter {
+    public static String calculatePerimeter(double length, double width) {
+        double area = length*width;
+        double perimeter = 2*(length+width);
+        return "Area:" + area + "\nPerimeter:" + perimeter;
+    }
+    
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the length of the Garden: ");
+        double length = scanner.nextDouble();
+        
+        System.out.println("Enter the width of the Garden: ");
+        double width = scanner.nextDouble();
+        
+        String result = calculatePerimeter(length,width);
+        
+        System.out.println(result);
+    }
+}
