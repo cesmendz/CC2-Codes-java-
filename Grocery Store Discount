@@ -34,3 +34,53 @@ class GroceryDiscount {
         System.out.println("Final Price after discount: Php " + String.format("%.2f", finalPrice));
     }
 }
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class GroceryCalculator {
+    public static void main(String[] cesca) {
+        // Create a Scanner object to input the total purchase amount
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the total purchase amount
+        System.out.print("Enter the total purchase amount: ");
+        double totalPurchaseAmount = scanner.nextDouble();
+
+        // Initialize variables to store the discount and final price
+        double discount = 0;
+        double finalPrice = 0;
+
+        // Apply the correct discount based on the rules
+        if (totalPurchaseAmount < 1000) {
+            // No discount
+            finalPrice = totalPurchaseAmount;
+        } else if (totalPurchaseAmount >= 1000 && totalPurchaseAmount <= 5000) {
+            
+            // 5% discount
+            discount = totalPurchaseAmount * 0.05;
+            finalPrice = totalPurchaseAmount - discount;
+            
+        } else if (totalPurchaseAmount >= 5001 && totalPurchaseAmount <= 10000) {
+            // 10% discount
+            discount = totalPurchaseAmount * 0.10;
+            finalPrice = totalPurchaseAmount - discount;
+            
+        } else {
+            // 15% discount
+            discount = totalPurchaseAmount * 0.15;
+            finalPrice = totalPurchaseAmount - discount;
+        }
+
+        // Display the discount and the final price
+        System.out.printf("Discount Applied: %.2f PHP%n", discount);
+        System.out.printf("Final Price ater Discount: %.2f PHP%n", finalPrice);
+    }
+}
