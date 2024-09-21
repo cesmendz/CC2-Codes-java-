@@ -1,38 +1,36 @@
+//% discount
 import java.util.Scanner;
 
-class GroceryDiscount {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter the total Amount: ");
-        double price = scanner.nextDouble();
-        
-        double discountRate = 0;
-        if (price < 1000){
-            discountRate = 0; //No discount
-            
-        }else if (price < 1001 && price >= 5000) {
-            discountRate = 0.05; //5% discount
-            
-        }else if (price < 5001 && price >= 10000) {
-            discountRate = 0.10; //10% discount
-            
-        }else if (price < 10000){
-            discountRate = 0.15; //15% discount
-        }
-        
-        //Calculate Discount
-        double discountAmount = price * discountRate;
-        
-        //Calculate final price after discount
-        double finalPrice = price - discountAmount;
-        
-        //Print the Result
-        System.out.println("Discount Applied: " + String.format("%.0f",discountRate * 100) + "%");
-        
-        
-        System.out.println("Final Price after discount: Php " + String.format("%.2f", finalPrice));
+public class GroceryCalculator {
+  public static void main(String[] cesca) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter the total purchase amount: PHP ");
+    double purchaseAmount = scanner.nextDouble();
+
+    double discount = 0;
+    double finalPrice = 0;
+
+    if (purchaseAmount < 1000) {
+      // No discount
+      finalPrice = purchaseAmount;
+    } else if (purchaseAmount >= 1000 && purchaseAmount <= 5000) {
+      // 5% discount
+      discount = purchaseAmount * 0.05;
+      finalPrice = purchaseAmount - discount;
+    } else if (purchaseAmount > 5001 && purchaseAmount <= 10000) {
+      // 10% discount
+      discount = purchaseAmount * 0.10;
+      finalPrice = purchaseAmount - discount;
+    } else {
+      // 15% discount
+      discount = purchaseAmount * 0.15;
+      finalPrice = purchaseAmount - discount;
     }
+
+    System.out.println("Discount applied: " + (int) (discount / purchaseAmount * 100) + "%");
+    System.out.println("Final price after discount: PHP " + finalPrice);
+  }
 }
 
 
@@ -41,8 +39,7 @@ class GroceryDiscount {
 
 
 
-
-
+//PHP discount
 import java.util.Scanner;
 
 public class GroceryCalculator {
