@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class TemperatureTracker {
+    public static void main(String[] args) {
+        // Number of cities and days
+        int numCities = 3;
+        int numDays = 7;
+
+        // Create a 2D array to store temperature data
+        double[][] temperatures = new double[numCities][numDays];
+
+        // Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Input temperature data for each city
+        for (int city = 0; city < numCities; city++) {
+            System.out.println("Enter temperatures for City " + (city + 1) + " for " + numDays + " days:");
+            for (int day = 0; day < numDays; day++) {
+                System.out.print("Day " + (day + 1) + ": ");
+                temperatures[city][day] = scanner.nextDouble();
+            }
+        }
+
+        // Calculate average temperatures and highest temperatures for each city
+        System.out.println("\nTemperature Summary:");
+        for (int city = 0; city < numCities; city++) {
+            double totalTemperature = 0;
+            double highestTemperature = temperatures[city][0]; // Initialize with the first day's temperature
+
+            // Print daily temperatures for the current city
+            System.out.print("City " + (city + 1) + " Temperatures: ");
+            for (int day = 0; day < numDays; day++) {
+                System.out.printf("%.2f ", temperatures[city][day]);
+                totalTemperature += temperatures[city][day];
+
+                // Check for the highest temperature
+                if (temperatures[city][day] > highestTemperature) {
+                    highestTemperature = temperatures[city][day];
+                }
+            }
+            System.out.println();
+
+            // Calculate average temperature
+            double averageTemperature = totalTemperature / numDays;
+
+            // Print results for the current city
+            System.out.printf("City %d: Average Temperature = %.2f, Highest Temperature = %.2f%n", 
+                              city + 1, averageTemperature, highestTemperature);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
